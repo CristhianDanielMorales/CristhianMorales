@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TrabajoPruebaCristhian.Models.Trabajadores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<center>
+    <h2>LISTADO DE TRABAJADORES</h2>
+</center>
+<p>
+
+    @Html.ActionLink("NUEVO TRABAJADOR", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDocumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NroDocumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROVINCIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DISTRITO)
+        </th>
+        <th>
+
+            ACCION
+
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDocumento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NroDocumento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEXO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTAMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PROVINCIA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DISTRITO)
+            </td>
+            <td>
+                @Html.ActionLink("EDITAR", "Edit", null, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("ELIMINAR", "Delete", null, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
